@@ -1,9 +1,9 @@
-public class DisjointSet {
+public class DisjointSetImpl {
 
     private int[] rank;
     private int[] parent;
     private int[] size;
-    public DisjointSet(int n){
+    public DisjointSetImpl(int n){
         //doing n+1 to incorporate 1 based idx
         this.rank = new int[n+1];
         this.parent = new int[n+1];

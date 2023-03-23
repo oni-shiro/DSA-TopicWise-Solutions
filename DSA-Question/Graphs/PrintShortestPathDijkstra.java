@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Pair{
     int wt;
     int node;
@@ -6,7 +8,7 @@ class Pair{
         this.node = node;
     }
 }
-class Solution {
+class Dijkstra {
     public static List<Integer> shortestPath(int n, int m, int edges[][]) {
         List<List<Pair>> adjList = new ArrayList<>();
         for(int i = 0;i<=n;i++){

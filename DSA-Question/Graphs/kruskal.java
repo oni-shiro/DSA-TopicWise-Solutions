@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class DisjointSet {
 
     private int[] rank;
@@ -69,7 +72,7 @@ class Tuple{
     }
 }
 
-class Solution{
+class Kruskal{
 	static int spanningTree(int V, int E, int edges[][]){
 	    // Code Here. 
 	    List<Tuple> data = new ArrayList<>();
@@ -81,17 +84,17 @@ class Solution{
 	        data.add(new Tuple(wt,u,v));
 	    }
 	    int mstSum = 0;
-	    Collections.sort(data,((a,b)->a.first-b.first));
+	    data.sort(((a, b) -> a.first - b.first));
 	    DisjointSet ds = new DisjointSet(V);
-	    for(int i = 0;i<data.size();i++){
-	        int wt = data.get(i).first;
-	        int u = data.get(i).second;
-	        int v = data.get(i).third;
-	        if(ds.findUltimateParent(u)!=ds.findUltimateParent(v)){
-	            mstSum += wt;
-	            ds.unionBySize(u,v);//rank works also
-	        }
-	    }
+        for (Tuple datum : data) {
+            int wt = datum.first;
+            int u = datum.second;
+            int v = datum.third;
+            if (ds.findUltimateParent(u) != ds.findUltimateParent(v)) {
+                mstSum += wt;
+                ds.unionBySize(u, v);//rank works also
+            }
+        }
 	    return mstSum;
 	    
 	}
