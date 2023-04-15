@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Pair{
     String word;
     int level;
@@ -10,11 +12,8 @@ class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
 
         int n = wordList.size();
-        Set<String> hs = new HashSet<>();
         //creating the unique set
-        for(String s : wordList){
-            hs.add(s);
-        }
+        Set<String> hs = new HashSet<>(wordList);
         Queue<Pair> q = new LinkedList<>();
         q.offer(new Pair(beginWord,1));
         int minLevel = 0;
