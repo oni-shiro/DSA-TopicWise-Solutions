@@ -56,6 +56,7 @@ public class TrieImplOne {
         for(int i = 0;i<n;i++) {
             char c = word.charAt(i);
             if(!temp.contains(c)) return false;
+            temp = temp.get(c);
         }
 
         return temp.isEnd();
@@ -67,6 +68,7 @@ public class TrieImplOne {
         for(int i = 0;i<n;i++) {
             char c = word.charAt(i);
             if(!temp.contains(c)) return false;
+            temp = temp.get(c);
         }
         return true;
     }
